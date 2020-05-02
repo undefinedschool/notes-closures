@@ -26,6 +26,10 @@ En el [paradigma funcional](https://github.com/undefinedschool/notes-fp-js), las
 
 Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side effects generados) de utilizar, por ejemplo, variables globales?
 
+## Scope léxico
+
+En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan.
+
 ## Closures
 
 Tener closures es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
@@ -34,7 +38,7 @@ Tener closures es una feature importante porque permite controlar qué queda den
 
 **En JavaScript, los closures se crean cada vez que se crea una función, por lo que **todas las funciones definen closures**. En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
 
-En resumen, un closure almacena el _estado_ de una function, aún después de que la misma haya retornado. En decir, la function definida en el closure _tiene memoria_ del entorno en el que fue definida.
+En resumen, un closure almacena el _estado_ de una función (tiene un ambiente de variables _ligado_), aún después de que la misma haya retornado. En decir, la función definida en el closure _tiene memoria_ del entorno en el que fue definida.
 
 ## Creando un closure
 
@@ -73,11 +77,20 @@ saluteLeo();   // 'Hi, Leo!'
 saluteLucas(); // 'Hi, Lucas!'
 ```
 
-## Beneficios
+Otro ejemplo
 
-### Objetos con propiedades privadas
+```js
+function outerFunction(outerVariable) {
+  return function innerFunction(innerVariable) {
+    console.log(`Outer variable: ${outerVariable}`);
+    console.log(`Inner variable: ${innerVariable}`);
+  }
+}
+```
 
-Esta técnica se utiliza bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
+## Definir objetos con propiedades privadas
+
+Los closures también se utilizan bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
 
 En el siguiente ejemplo, `accountBalance` es una variable global que puede ser accedida (y modificada) externamente, algo que queremos evitar!
 
