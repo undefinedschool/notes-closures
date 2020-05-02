@@ -38,13 +38,15 @@ En resumen, un closure almacena el _estado_ de una function, aún después de qu
 
 ## Creando un closure
 
-Alcanza con definir una función dentro de otra.
+Alcanza con definir una función dentro de otra: tenemos una función que retorna una función, por lo tanto se trata de una [_Higher-Order Function_](https://github.com/undefinedschool/notes-fp-js#higher-order-functions).
+
+En el siguiente ejemplo, la constante `name` puede ser accedida desde la función `salute()`.
 
 ```js
-function salute() {
+const salute = () => {
   const name = "Sarah";
   
-  function showName() {
+  const showName = () => {
     alert(name);
   }
   
@@ -53,3 +55,24 @@ function salute() {
 
 salute();
 ```
+
+Si le agregamos parámetros a la función externa que el closure puede utilizar, este se vuelve mucho más versátil. Por ejemplo
+
+```js
+const sayHi = name =>
+  () => `Hi, ${name}!`
+```
+
+```js
+const saluteCaro = sayHi('Caro');
+const saluteLeo = sayHi('Leo');
+const saluteLucas = sayHi('Lucas');
+
+saluteCaro();  // 'Hi, Caro!'
+saluteLeo();   // 'Hi, Leo!'
+saluteLucas(); // 'Hi, Lucas!'
+```
+
+## Objetos con propiedades privadas
+
+Esta técnica se utiliza bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
