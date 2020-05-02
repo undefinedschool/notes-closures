@@ -73,6 +73,54 @@ saluteLeo();   // 'Hi, Leo!'
 saluteLucas(); // 'Hi, Lucas!'
 ```
 
-## Objetos con propiedades privadas
+## Beneficios
+
+### Objetos con propiedades privadas
 
 Esta técnica se utiliza bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
+
+En el siguiente ejemplo, `accountBalance` es una variable global que puede ser accedida (y modificada) externamente, algo que queremos evitar!
+
+```js
+let accountBalance = 0;
+
+function manageBankAccount() {
+  return {
+    deposit(amount) {
+      accountBalance += amount;
+    },
+    withdraw(amount) {
+      // ... safety logic
+      accountBalance -= amount;
+    }
+  };
+}
+```
+
+Si utilizamos closures, limitamos el scope de la variable y por lo tanto sólo puede ser modificada a través del objeto
+
+```js
+function manageBankAccount(initialBalance) {
+  let accountBalance = initialBalance;
+    
+  return {
+    getBalance() {
+      return accountBalance
+    },
+    deposit(amount) { 
+      accountBalance += amount; 
+    },
+    withdraw(amount) {
+      if (amount > accountBalance) return 'You cannot draw that much!';
+
+      accountBalance -= amount;
+    }
+  }
+};
+
+const accountManager = manageBankAccount(0);
+
+accountManager.deposit(1000);
+accountManager.withdraw(500);
+accountManager.getBalance(); // 500
+```
