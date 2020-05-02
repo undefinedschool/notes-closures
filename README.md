@@ -28,23 +28,28 @@ Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side e
 
 ## Closures
 
-[WIP]
+Tener closures es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
 
-Mientras que las funciones closure son aquellas que hacen referencia a variables externas a su ámbito o scope.
+**Un closure es la combinación de una función y su _scope léxico_** (el entorno donde fue definida). Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma, similar a lo que ocurre con las variables globales, pero sin los _side effects_ 😎. 
 
-[WIP]
+**En JavaScript, los closures se crean cada vez que se crea una función, por lo que **todas las funciones definen closures**. En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
 
-Las Closures son importantes porque permiten controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_. Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
+En resumen, un closure almacena el _estado_ de una function, aún después de que la misma haya retornado. En decir, la function definida en el closure _tiene memoria_ del entorno en el que fue definida.
 
-Un closure es la combinación de una función ligada a referencias a su scope léxico. Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma. 
+## Creando un closure
 
-**En JavaScript, los closures se crean cada vez que se crea una función.**
+Alcanza con definir una función dentro de otra.
 
-[WIP]
+```js
+function salute() {
+  const name = "Sarah";
+  
+  function showName() {
+    alert(name);
+  }
+  
+  showName();
+}
 
-— Functions are our units to build with but they’re
-limited - they forget everything each time they finish
-running - with no global state
-— Imagine if we could give our functions memories
-
-[WIP]
+salute();
+```
