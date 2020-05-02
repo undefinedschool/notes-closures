@@ -24,7 +24,9 @@ El _scope_ de una variable depende de cómo la definamos:
 
 ### Scope léxico
 
-En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan. Determina a qué datos (estado) una función tiene acceso cuando la invocamos.
+En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan. _Léxico_ hace referencia a dónde (en qué parte del código) fue definida la función.
+
+Determina a qué datos (variables, estado) una función tiene acceso cuando la invocamos.
 
 ## FP y Funciones
 
@@ -150,3 +152,5 @@ accountManager.deposit(1000);
 accountManager.withdraw(500);
 accountManager.getBalance(); // 500
 ```
+
+Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
