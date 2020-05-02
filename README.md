@@ -91,7 +91,7 @@ function outerFunction(outerVariable) {
 }
 ```
 
-## Definir objetos con propiedades privadas
+## Definir variables y propiedades privadas
 
 Los closures también se utilizan bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
 
