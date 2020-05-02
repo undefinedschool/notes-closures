@@ -20,21 +20,23 @@ El _scope_ de una variable depende de cómo la definamos:
 
 > **Siempre que sea posible, es recomendable evitar utilizar variables globales**: podemos tener colisiones de nombres (por ejemplo, si estamos utilizando módulos o importando alguna librería externa) y estamos generando [_side-effects_](https://github.com/undefinedschool/notes-fp-js#side-effects), que vuelven menos mantenible y más frágil a nuestro código.
 
+👉 **En JavaScript, cada función crea un nuevo _contexto local de ejecución_ (o _scope local_).**
+
+### Scope léxico
+
+En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan. Determina a qué datos (estado) una función tiene acceso cuando la invocamos.
+
 ## FP y Funciones
 
 En el [paradigma funcional](https://github.com/undefinedschool/notes-fp-js), las [funciones](https://github.com/undefinedschool/notes-fp-js#funciones-puras) son el bloque fundamental que utilizamos para construir nuestras aplicaciones. Si bien vimos que tienen muchas ventajas, también nos encontramos con ciertas limitaciones. Por ejemplo, _no tienen memoria_: se olvidan de todo el historial de ejecución cada vez que retornan un valor y no tenemos acceso a un _estado global_, algo que nos resultaría muy útil.
 
 Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side effects generados) de utilizar, por ejemplo, variables globales?
 
-## Scope léxico
-
-En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan.
-
 ## Closures
 
 Tener closures es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
 
-**Un closure es la combinación de una función y su _scope léxico_** (el entorno donde fue definida). Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma, similar a lo que ocurre con las variables globales, pero sin los _side effects_ 😎. 
+**Un closure es la combinación de una función y su _scope léxico_** (el entorno donde fue definida). Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma, similar a lo que ocurre con las variables globales, pero controlando los _side effects_ 😎. 
 
 **En JavaScript, los closures se crean cada vez que se crea una función, por lo que **todas las funciones definen closures**. En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
 
@@ -42,6 +44,14 @@ En resumen, un closure almacena el _estado_ de una función (tiene un ambiente d
 
 [![Learn Closures In 7 Minutes](https://img.youtube.com/vi/3a0I8ICR1Vg/0.jpg)](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 > Ver [Learn Closures In 7 Minutes](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
+
+## Closures y el contexto de ejecución
+
+Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_. Esto implica que
+
+- cada variable declarada dentro de este scope es _local_.
+- el scope externo a la función no tiene acceso a las variables locales.
+- el scope local _puede acceder al scope externo_, gracias a los closures.
 
 ## Creando un closure
 
