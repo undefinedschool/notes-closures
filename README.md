@@ -56,7 +56,7 @@ const salute = () => {
 salute();
 ```
 
-Si le agregamos parámetros a la función externa que el closure puede utilizar, este se vuelve mucho más versátil. Por ejemplo
+Si le agregamos parámetros a la función externa que el closure (función interna) puede utilizar, este se vuelve mucho más versátil. Por ejemplo
 
 ```js
 const sayHi = name =>
