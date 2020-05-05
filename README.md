@@ -47,7 +47,7 @@ En resumen, un closure almacena el _estado_ de una función (tiene un ambiente d
 [![Learn Closures In 7 Minutes](https://img.youtube.com/vi/3a0I8ICR1Vg/0.jpg)](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 > Ver [Learn Closures In 7 Minutes](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 
-## Closures y el contexto de ejecución
+### Closures y el contexto de ejecución
 
 Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_. Esto implica que
 
@@ -55,7 +55,7 @@ Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_
 - el scope externo a la función no tiene acceso a las variables locales.
 - el scope local _puede acceder al scope externo_, gracias a los closures.
 
-## Creando un closure
+### Creando un closure
 
 Alcanza con definir una función dentro de otra: tenemos una función que retorna una función, por lo tanto se trata de una [_Higher-Order Function_](https://github.com/undefinedschool/notes-fp-js#higher-order-functions).
 
@@ -103,7 +103,7 @@ function outerFunction(outerVariable) {
 }
 ```
 
-## Definir variables y propiedades privadas
+### Definir variables y propiedades _privadas_
 
 Los closures también se utilizan bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
 
