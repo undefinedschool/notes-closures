@@ -5,7 +5,19 @@
 
 # Notas sobre Closures
 
+## Contenido
+
 - [Scope]()
+  - [Scope léxico]()
+- [FP y Funciones]()
+- [Closures]()
+  - [Closures y el contexto de ejecución]()
+  - [Creando un closure]()
+  - [Usos comunes]()
+    - [Definir variables y propiedades _privadas_]()
+    - [Funciones con estado (feat. _React Hooks_)]()
+    - [FP: Aplicaciones Parciales]()
+    - [FP: Currying]()
 
 ---
 
@@ -107,9 +119,9 @@ function outerFunction(outerVariable) {
 }
 ```
 
-## Usos comunes
+### Usos comunes
 
-### Definir variables y propiedades _privadas_
+#### Definir variables y propiedades _privadas_
 
 **Una aplicación común de los cloures es darle privacidad a algunas partes de la interfaz de un objeto (definir propiedades o métodos _privados_)**.
 
@@ -165,10 +177,10 @@ accountManager.getBalance(); // 500
 
 Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
 
-### FP: Aplicaciones Parciales
-
-### FP: Currying
-
 ### Funciones con estado (feat. _React Hooks_)
 
 Los objetos no son la única forma que tenemos de _encapsular datos_. También podemos utilizar closures para crear _funciones con estado_ (stateful), cuyos valores de retorno dependan de este estado interno.
+
+### FP: Aplicaciones Parciales
+
+### FP: Currying
