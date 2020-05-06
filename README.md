@@ -7,17 +7,17 @@
 
 ## Contenido
 
-- [Scope]()
-  - [Scope léxico]()
-- [FP y Funciones]()
-- [Closures]()
-  - [Closures y el contexto de ejecución]()
-  - [Creando un closure]()
-  - [Usos comunes]()
-    - [Definir variables y propiedades _privadas_]()
-    - [Funciones con estado (feat. _React Hooks_)]()
-    - [FP: Aplicaciones Parciales]()
-    - [FP: Currying]()
+- [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
+  - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
+- [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
+- [Closures](https://github.com/undefinedschool/notes-closures#closures)
+  - [Closures y el contexto de ejecución](https://github.com/undefinedschool/notes-closures#closures-y-el-contexto-de-ejecuci%C3%B3n)
+  - [Creando un closure](https://github.com/undefinedschool/notes-closures#creando-un-closure)
+  - [Usos comunes](https://github.com/undefinedschool/notes-closures#usos-comunes)
+    - [Definir variables y propiedades _privadas_](https://github.com/undefinedschool/notes-closures#definir-variables-y-propiedades-privadas)
+    - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
+    - [FP: Aplicaciones Parciales](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales)
+    - [FP: Currying](https://github.com/undefinedschool/notes-closures#fp-currying)
 
 ---
 
@@ -48,7 +48,7 @@ Determina a qué datos (variables, estado) una función tiene acceso cuando la i
 
 ## FP y Funciones
 
-En el [paradigma funcional](https://github.com/undefinedschool/notes-fp-js), las [funciones](https://github.com/undefinedschool/notes-fp-js#funciones-puras) son el bloque fundamental que utilizamos para construir nuestras aplicaciones. Si bien vimos que tienen muchas ventajas, también nos encontramos con ciertas limitaciones. Por ejemplo, _no tienen memoria_: se olvidan de todo el historial de ejecución cada vez que retornan un valor y no tenemos acceso a un _estado global_, algo que nos resultaría muy útil.
+En el [paradigma funcional](https://github.com/undefinedschool/notes-fp-js) (o más breve, _FP_), las [funciones](https://github.com/undefinedschool/notes-fp-js#funciones-puras) son el bloque fundamental que utilizamos para construir nuestras aplicaciones. Si bien vimos que tienen muchas ventajas, también nos encontramos con ciertas limitaciones. Por ejemplo, _no tienen memoria_: se olvidan de todo el historial de ejecución cada vez que retornan un valor y no tenemos acceso a un _estado global_, algo que nos resultaría muy útil.
 
 Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side effects generados) de utilizar, por ejemplo, variables globales?
 
