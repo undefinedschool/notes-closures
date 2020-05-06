@@ -5,6 +5,10 @@
 
 # Notas sobre Closures
 
+- [Scope]()
+
+---
+
 ## Scope (breve repaso)
 
 Define el _alcance_ de una variable, es decir, dónde puede o no utilizarse. En JavaScript tenemos 3 tipos de scope: global, por función y por bloque.
@@ -22,6 +26,8 @@ El _scope_ de una variable depende de cómo la definamos:
 
 👉 **En JavaScript, cada función crea un nuevo _contexto local de ejecución_ (o _scope local_).**
 
+Tener _closures_ es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
+
 ### Scope léxico
 
 En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan. _Léxico_ hace referencia a dónde (en qué parte del código) fue definida la función.
@@ -36,13 +42,11 @@ Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side e
 
 ## Closures
 
-Tener closures es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
+**Un closure es la combinación de una función y un _ambiente o estado ligado_, determinado por su _scope léxico_** (el entorno donde fue definida). Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma, similar a lo que ocurre con las variables globales, pero controlando los _side effects_ 😎. 
 
-**Un closure es la combinación de una función y su _scope léxico_** (el entorno donde fue definida). Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma, similar a lo que ocurre con las variables globales, pero controlando los _side effects_ 😎. 
+**En JavaScript, los closures se crean cada vez que se crea una función, por lo que **todas las funciones definen closures** (por default, el scope ligado es el global). En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
 
-**En JavaScript, los closures se crean cada vez que se crea una función, por lo que **todas las funciones definen closures**. En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
-
-En resumen, un closure almacena el _estado_ de una función (tiene un ambiente de variables _ligado_), aún después de que la misma haya retornado. En decir, la función definida en el closure _tiene memoria_ del entorno en el que fue definida.
+En resumen, un closure almacena el _estado_ de una función (tiene un ambiente de variables _ligado_), aún después de que la misma haya retornado. En decir, la función definida en el closure _tiene memoria_ del entorno (estado) en el que fue definida.
 
 [![Learn Closures In 7 Minutes](https://img.youtube.com/vi/3a0I8ICR1Vg/0.jpg)](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 > Ver [Learn Closures In 7 Minutes](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
@@ -57,7 +61,7 @@ Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_
 
 ### Creando un closure
 
-Alcanza con definir una función dentro de otra: tenemos una función que retorna una función, por lo tanto se trata de una [_Higher-Order Function_](https://github.com/undefinedschool/notes-fp-js#higher-order-functions).
+Para definir un closure, alcanza con definir una función dentro de otra: tenemos una función que retorna una función, por lo tanto se trata de una [_Higher-Order Function_](https://github.com/undefinedschool/notes-fp-js#higher-order-functions).
 
 En el siguiente ejemplo, la constante `name` puede ser accedida desde la función `salute()`.
 
@@ -103,9 +107,15 @@ function outerFunction(outerVariable) {
 }
 ```
 
+## Usos comunes
+
 ### Definir variables y propiedades _privadas_
 
-Los closures también se utilizan bastante para definir propiedades o métodos _privados_ en objetos, ya que sólo podemos acceder a variables locales estando dentro del _scope_ de una función.
+**Una aplicación común de los cloures es darle privacidad a algunas partes de la interfaz de un objeto (definir propiedades o métodos _privados_)**.
+
+> **Esto nos va a permitir escribir código que se base más en las interfaces (_encapsulación_) que en la implementación**, resultando en aplicaciones más robustas, ya que los detalles de implementación son más propensos a cambiar con el tiempo que las interfaces. 
+
+**Recordemos que sólo podemos acceder a variables locales estando dentro del _scope_ de la función externa/contenedora. No podemos acceder al estado desde un _scope externo_, salvo a través de los _métodos privilegiados_**. En JavaScript, cualquier método expuesto, definido dentro de un closure, es un método privilegiado.
 
 En el siguiente ejemplo, `accountBalance` es una variable global que puede ser accedida (y modificada) externamente, algo que queremos evitar!
 
@@ -154,3 +164,11 @@ accountManager.getBalance(); // 500
 ```
 
 Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
+
+### FP: Aplicaciones Parciales
+
+### FP: Currying
+
+### Funciones con estado (feat. _React Hooks_)
+
+Los objetos no son la única forma que tenemos de _encapsular datos_. También podemos utilizar closures para crear _funciones con estado_ (stateful), cuyos valores de retorno dependan de este estado interno.
