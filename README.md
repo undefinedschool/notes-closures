@@ -56,7 +56,7 @@ Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side e
 
 **Un closure es la combinación de una función y un _ambiente o estado ligado_, determinado por su _scope léxico_** (el entorno donde fue definida). Es decir, un closure permite que una función tenga acceso a un scope externo (variables, estado) definido fuera de la misma, similar a lo que ocurre con las variables globales, pero controlando los _side effects_ 😎. 
 
-**En JavaScript, los closures se crean cada vez que se crea una función, por lo que **todas las funciones definen closures** (por default, el scope ligado es el global). En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
+**En JavaScript, los closures se crean cada vez que se crea una función, por lo que todas las funciones definen closures** (por default, el scope ligado es el _global_). En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
 
 En resumen, un closure almacena el _estado_ de una función (tiene un ambiente de variables _ligado_), aún después de que la misma haya retornado. En decir, la función definida en el closure _tiene memoria_ del entorno (estado) en el que fue definida.
 
@@ -70,6 +70,9 @@ Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_
 - cada variable declarada dentro de este scope es _local_.
 - el scope externo a la función no tiene acceso a las variables locales.
 - el scope local _puede acceder al scope externo_, gracias a los closures.
+
+[![Part 1: JavaScript the Hard Parts: Closure, Scope & Execution Context](https://img.youtube.com/vi/DrgnNapYs1w/0.jpg)](https://www.youtube.com/watch?v=DrgnNapYs1w)
+> Ver [Part 1: JavaScript the Hard Parts: Closure, Scope & Execution Context](https://www.youtube.com/watch?v=DrgnNapYs1w)
 
 ### Creando un closure
 
