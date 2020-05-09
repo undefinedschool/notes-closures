@@ -28,6 +28,7 @@
 
 ## Contenido
 
+- [Intro](https://github.com/undefinedschool/notes-closures#intro)
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
   - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
 - [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
@@ -42,6 +43,99 @@
     - [FP: Aplicaciones Parciales y _Currying_](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales-y-currying)
 
 ---
+
+## Intro
+
+Supongamos que tenemos el siguiente código, una función `getEmployee` que crea nuevos empleados.
+
+```js
+function getEmployee(name, country) {
+  return { name, country };
+}
+ 
+const employeeOne = getEmployee('Robin', 'Germany');
+const employeeTwo = getEmployee('Markus', 'Canada');
+ 
+const employees = [employeeOne, employeeTwo];
+```
+
+Agreguemos un `id` para identificar a cada empleado. Este valor debe ser asignado _internamente_, ya que una vez creado y retornado el objeto, no vamos a modificarlo.
+
+```js
+function getEmployee(name, country) {
+  let employeeNumber = 1;
+  return { employeeNumber, name, country };
+}
+ 
+const employeeOne = getEmployee('Robin', 'Germany');
+const employeeTwo = getEmployee('Markus', 'Canada');
+ 
+const employees = [employeeOne, employeeTwo];
+```
+
+El problema que tenemos es que estamos repitiendo siempre el mismo `id` y debería ser único. Usualmente, los ids se van incrementando en 1 y nos gustaría hacer eso con el `id` de cada nuevo empleado. Pero una vez que la función `getEmployee` retorna, no tiene forma de _trackear_ el valor actual de este `id`, para luego asignar el correspondiente. Notemos que la función es pura, sólo depende de sus inputs y no mantiene un _historial_ de su estado interno luego de ejecutarse.
+
+Entonces, algo que se nos puede ocurrir es mover este `id` fuera de la función, para que de esta forma pueda ser accedido y actualizado luego, con cada llamada a la función `getEmployee`.
+
+```js
+let employeeNumber = 1;
+ 
+function getEmployee(name, country) {
+  return { employeeNumber: employeeNumber++, name, country };
+}
+ 
+const employeeOne = getEmployee('Robin', 'Germany');
+const employeeTwo = getEmployee('Markus', 'Canada');
+ 
+const employees = [employeeOne, employeeTwo];
+```
+
+Con este cambio, `employeeNumber` pasó de poder utilizarse sólo dentro del scope de la función a estar en el _scope global_. Esto nos puede traer algunos problemas... Ahora puede ser accedido y modificado desde cualquier parte.
+
+```js
+let employeeNumber = 1;
+ 
+function getEmployee(name, country) {
+  return { 
+    employeeNumber: employeeNumber++, 
+    name, 
+    country 
+  };
+}
+ 
+const employeeOne = getEmployee('Robin', 'Germany');
+employeeNumber = 50;
+const employeeTwo = getEmployee('Markus', 'Canada');
+ 
+const employees = [employeeOne, employeeTwo];
+```
+
+Nos gustaría poder seguir trackeando el estado interno, pero sin caer en los problemas que nos genera utilizar estado global (side effects). Para eso podemos utilizar **closures**.
+
+```js
+function getEmployeeFactory() {
+  let employeeNumber = 1;
+  
+  return (name, country) => ({
+    employeeNumber: employeeNumber++, 
+    name, 
+    country 
+  });
+}
+ 
+const getEmployee = getEmployeeFactory();
+ 
+const employeeOne = getEmployee('Robin', 'Germany');
+const employeeTwo = getEmployee('Markus', 'Canada');
+ 
+const employees = [employeeOne, employeeTwo];
+```
+
+Ahora `getEmployeeFactory` pasa a ser una _HOF_ (Higher-Order Function), ya que retorna una función.
+
+Ya no es posible modificar el `id` desde afuera del scope de la función, porque dejó de pertenecer al scope global. El `employeeNumber` pasó a ser un _estado interno_ que persiste en la función.
+
+> **Nota:** en este ejemplo, `getEmployeeFactory()` utiliza el patrón de diseño conocido como [_Factory Pattern_](https://medium.com/@thebabscraig/javascript-design-patterns-part-1-the-factory-pattern-5f135e881192)
 
 ## Scope (breve repaso)
 
