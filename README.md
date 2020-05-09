@@ -34,9 +34,9 @@
   - [Creando un closure](https://github.com/undefinedschool/notes-closures#creando-un-closure)
   - [Usos comunes](https://github.com/undefinedschool/notes-closures#usos-comunes)
     - [Definir variables y propiedades _privadas_](https://github.com/undefinedschool/notes-closures#definir-variables-y-propiedades-privadas)
-    - [Evitar las variables globales]()
+    - [Evitar las variables globales](https://github.com/undefinedschool/notes-closures#evitar-las-variables-globales)
     - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
-    - [FP: Aplicaciones Parciales y _Currying_]()
+    - [FP: Aplicaciones Parciales y _Currying_](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales-y-currying)
 
 ---
 
