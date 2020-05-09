@@ -218,6 +218,38 @@ Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
 
 👉 Una ventaja indirecta de evitar las variables globales utilizando closures, es que _evitamos la polución del scope global_, teniendo menos funciones, variables y valores viviendo continuamente en la memoria global de nuestro programa, resultando en una aplicación más eficiente.
 
+Por ejemplo, cada vez que invocamos `produceChocolate` estamos creando y destruyendo continuamente el array `chocolateFactory`, porque pertenece al scope local de la función.
+
+```js
+const produceChocolate = index => {  
+  const chocolateFactory = new Array(7000).fill('chocolate');
+ 
+  return chocolateFactory[index];
+}
+
+produceChocolate(1);
+produceChocolate(996);
+produceChocolate(6784);
+```
+
+En cambio, podemos utilizar closures, para crear el array sólo 1 vez.
+
+```js
+const produceChocolateEfficiently = () => {
+  const chocolateFactory = new Array(7000).fill('chocolate');
+  
+  // chocolateFactory is stored in the closure memory, 
+  // because it has reference in execution scope of inner function below
+  return (index) => chocolateFactory[index];
+}
+
+const getProduceChocolateEfficiently = produceChocolateEfficiently();
+
+getProduceChocolateEfficiently(1243);
+getProduceChocolateEfficiently(6832);
+getProduceChocolateEfficiently(345);
+```
+
 #### Funciones con estado (feat. _React Hooks_)
 
 [WIP]
