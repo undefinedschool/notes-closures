@@ -110,7 +110,7 @@ const employeeTwo = getEmployee('Markus', 'Canada');
 const employees = [employeeOne, employeeTwo];
 ```
 
-Nos gustaría poder seguir trackeando el estado interno, pero sin caer en los problemas que nos genera utilizar estado global (side effects). Para eso podemos utilizar **closures**.
+Nos gustaría poder seguir trackeando el estado interno, pero sin caer en los problemas que nos genera utilizar estado global (side effects). Modifiquemos el código de la sigueinte forma
 
 ```js
 function getEmployeeFactory() {
@@ -135,7 +135,7 @@ Ahora `getEmployeeFactory` pasa a ser una _HOF_ (Higher-Order Function), ya que 
 
 Ya no es posible modificar el `id` desde afuera del scope de la función, porque dejó de pertenecer al scope global. El `employeeNumber` pasó a ser un _estado interno_ que persiste en la función.
 
-> **Nota:** en este ejemplo, `getEmployeeFactory()` utiliza el patrón de diseño conocido como [_Factory Pattern_](https://medium.com/@thebabscraig/javascript-design-patterns-part-1-the-factory-pattern-5f135e881192)
+> **Nota:** en este ejemplo, `getEmployeeFactory()` utiliza el patrón de diseño conocido como [_Factory Pattern_](https://medium.com/@thebabscraig/javascript-design-patterns-part-1-the-factory-pattern-5f135e881192).
 
 ## Scope (breve repaso)
 
