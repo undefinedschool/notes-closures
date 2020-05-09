@@ -34,9 +34,9 @@
   - [Creando un closure](https://github.com/undefinedschool/notes-closures#creando-un-closure)
   - [Usos comunes](https://github.com/undefinedschool/notes-closures#usos-comunes)
     - [Definir variables y propiedades _privadas_](https://github.com/undefinedschool/notes-closures#definir-variables-y-propiedades-privadas)
+    - [Evitar las variables globales]()
     - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
-    - [FP: Aplicaciones Parciales](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales)
-    - [FP: Currying](https://github.com/undefinedschool/notes-closures#fp-currying)
+    - [FP: Aplicaciones Parciales y _Currying_]()
 
 ---
 
@@ -199,10 +199,17 @@ accountManager.getBalance(); // 500
 
 Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
 
-### Funciones con estado (feat. _React Hooks_)
+#### Evitar las variables globales
+
+[![Three Techniques for Avoiding Global Variables in JavaScript Using Closure](https://img.youtube.com/vi/SMUHorBkVsY/0.jpg)](https://www.youtube.com/watch?v=SMUHorBkVsY)
+> Ver [Three Techniques for Avoiding Global Variables in JavaScript Using Closure](https://www.youtube.com/watch?v=SMUHorBkVsY)
+
+#### Funciones con estado (feat. _React Hooks_)
+
+[WIP]
 
 Los objetos no son la única forma que tenemos de _encapsular datos_. También podemos utilizar closures para crear _funciones con estado_ (stateful), cuyos valores de retorno dependan de este estado interno.
 
-### FP: Aplicaciones Parciales
+#### FP: Aplicaciones Parciales y _Currying_
 
-### FP: Currying
+[WIP]
