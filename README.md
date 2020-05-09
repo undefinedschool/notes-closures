@@ -1,9 +1,26 @@
-> El siguiente contenido fue elaborado por [@_nhsz](https://twitter.com/_nhsz) como guía para las clases de [undefined school](https://twitter.com/undefinedSchool)  
-> Son bienvenidos los _issues_ y _PRs_ para mejorar el contenido, corregir errores, etc. 
+# ![Closures](https://i.imgur.com/7fbQZJE.png)
 
-> 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
-
-# Notas sobre Closures
+<div align="center">  
+  <p align="center">
+  <sub>
+    Estas notas fueron elaboradas por <a href="https://twitter.com/_nhsz" target="_blank" rel="noreferrer noopener">@_nhsz</a>, como parte del contenido de los cursos de <a href="https://undefinedschool.io/" target="_blank" rel="noreferrer noopener"><strong>undefined school</strong></a>, una escuela de <strong>Desarrollo Web Full Stack JavaScript</strong>, <a href="https://github.com/undefinedschool/" target="_blank" rel="noreferrer noopener">100% Open Source</a>, con <strong>mentorías personalizadas para grupos reducidos</strong> y el foco puesto en los <strong>fundamentos</strong> y <strong>conceptos avanzados</strong> ⚡
+  </sub>
+  </p>
+  
+  <p align="center">
+  <sub>
+    Si te resultaron útiles, te cuento que soy muy fan del café; si querés colaborar para que no me quede dormido y siga escribiendo guías, apuntes y más <strong>contenido Open Source en español</strong>, podés invitarme uno, gracias! ❤️
+  </sub>
+  </p>
+  
+  <h3 align="center">
+  ☕ 
+  <a mp-mode="dftl" href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=243772354-b32a750f-2505-41c1-8e5e-9dcdb4536593" name="MP-payButton" class='blue-ar-l-rn-none'>
+    <strong>Invitame 1 café!</strong>
+  </a>
+  </h3>
+  <hr>
+</div>
 
 ## Contenido
 
