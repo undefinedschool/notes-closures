@@ -84,7 +84,7 @@ Un closure almacena el _estado_ de una función (tiene un ambiente de variables 
 [![Learn Closures In 7 Minutes](https://img.youtube.com/vi/3a0I8ICR1Vg/0.jpg)](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 > Ver [Learn Closures In 7 Minutes](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 
-Por lo tanto, un closure termina siendo un tipo especial de objeto que combina lo siguiente:
+👉 Por lo tanto, un closure termina siendo un tipo especial de objeto que combina lo siguiente:
 
 - una función
 - el entorno en el cual la función fue definida ([scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico))
