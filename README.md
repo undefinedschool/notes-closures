@@ -79,10 +79,16 @@ Pero cómo podríamos tener esta funcionalidad sin caer en los problemas (side e
 
 **En JavaScript, los closures se crean cada vez que se crea una función, por lo que todas las funciones definen closures** (por default, el scope ligado es el _global_). En los lenguajes que no tienen closures en cambio, las variables (estado) local sólo existen durante la ejecución de la función.
 
-En resumen, un closure almacena el _estado_ de una función (tiene un ambiente de variables _ligado_), aún después de que la misma haya retornado. En decir, la función definida en el closure _tiene memoria_ del entorno (estado) en el que fue definida.
+Un closure almacena el _estado_ de una función (tiene un ambiente de variables _ligado_), aún después de que la misma haya retornado. En decir, la función definida en el closure _tiene memoria_ del entorno (estado) en el que fue definida.
 
 [![Learn Closures In 7 Minutes](https://img.youtube.com/vi/3a0I8ICR1Vg/0.jpg)](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
 > Ver [Learn Closures In 7 Minutes](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
+
+Por lo tanto, un closure termina siendo un tipo especial de objeto que combina lo siguiente:
+
+- una función
+- el entorno en el cual la función fue definida ([scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico))
+  - el entorno consiste de cualquier variable local o función definida dentro de este scope en el momento en el que se define el closure.
 
 ### Closures y el contexto de ejecución
 
