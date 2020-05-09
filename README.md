@@ -95,6 +95,10 @@ Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_
 [![Part 1: JavaScript the Hard Parts: Closure, Scope & Execution Context](https://img.youtube.com/vi/DrgnNapYs1w/0.jpg)](https://www.youtube.com/watch?v=DrgnNapYs1w)
 > Ver [Part 1: JavaScript the Hard Parts: Closure, Scope & Execution Context](https://www.youtube.com/watch?v=DrgnNapYs1w)
 
+Al crear un closure, [se enlaza una función a un entorno de variables](https://javascript.info/closure#lexical-environment) (determinado por su scope léxico). 
+
+Una función definida dentro de otra y luego retornada, mantiene el acceso a este entorno a través de una propiedad oculta `[[scope]]` (recordemos que [las funciones son objetos!](https://github.com/undefinedschool/notes-functions-first-class)) que persiste aún cuando la función es retornada. De esta forma, la función retornada (closure) va a buscar las referencias a variables y otros objetos primero en su scope local y luego en el entorno ligado, antes de pasar a buscar en el scope global.
+
 ### Creando un closure
 
 Para definir un closure, alcanza con definir una función dentro de otra: tenemos una función que retorna una función, por lo tanto se trata de una [_Higher-Order Function_](https://github.com/undefinedschool/notes-fp-js#higher-order-functions).
