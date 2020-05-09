@@ -216,6 +216,8 @@ Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
 [![Three Techniques for Avoiding Global Variables in JavaScript Using Closure](https://img.youtube.com/vi/SMUHorBkVsY/0.jpg)](https://www.youtube.com/watch?v=SMUHorBkVsY)
 > Ver [Three Techniques for Avoiding Global Variables in JavaScript Using Closure](https://www.youtube.com/watch?v=SMUHorBkVsY)
 
+👉 Una ventaja indirecta de evitar las variables globales utilizando closures, es que _evitamos la polución del scope global_, teniendo menos funciones, variables y valores viviendo continuamente en la memoria global de nuestro programa, resultando en una aplicación más eficiente.
+
 #### Funciones con estado (feat. _React Hooks_)
 
 [WIP]
