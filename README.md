@@ -37,6 +37,7 @@
   - [Usos comunes](https://github.com/undefinedschool/notes-closures#usos-comunes)
     - [Definir variables y propiedades _privadas_](https://github.com/undefinedschool/notes-closures#definir-variables-y-propiedades-privadas)
     - [Evitar las variables globales](https://github.com/undefinedschool/notes-closures#evitar-las-variables-globales)
+    - [Uso más eficiente de la memoria]()
     - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
     - [FP: Aplicaciones Parciales y _Currying_](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales-y-currying)
 
@@ -216,7 +217,9 @@ Como vemos, los closures nos permiten _encapsular datos o comportamiento_.
 [![Three Techniques for Avoiding Global Variables in JavaScript Using Closure](https://img.youtube.com/vi/SMUHorBkVsY/0.jpg)](https://www.youtube.com/watch?v=SMUHorBkVsY)
 > Ver [Three Techniques for Avoiding Global Variables in JavaScript Using Closure](https://www.youtube.com/watch?v=SMUHorBkVsY)
 
-👉 Una ventaja indirecta de evitar las variables globales utilizando closures, es que _evitamos la polución del scope global_, teniendo menos funciones, variables y valores viviendo continuamente en la memoria global de nuestro programa, resultando en una aplicación más eficiente.
+#### Uso más eficiente de la memoria
+
+Una ventaja indirecta de evitar las variables globales utilizando closures, es que _evitamos la polución del scope global_, teniendo menos funciones, variables y valores viviendo continuamente en la memoria global de nuestro programa, resultando en una aplicación más eficiente.
 
 Por ejemplo, cada vez que invocamos `produceChocolate` estamos creando y destruyendo continuamente el array `chocolateFactory`, porque pertenece al scope local de la función.
 
