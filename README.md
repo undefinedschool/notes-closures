@@ -22,6 +22,8 @@
   <hr>
 </div>
 
+> 👉 Ver [todas las notas](https://github.com/undefinedschool/notes)
+
 ## Contenido
 
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
