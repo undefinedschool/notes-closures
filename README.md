@@ -31,6 +31,7 @@
 - [Intro](https://github.com/undefinedschool/notes-closures#intro)
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
   - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
+- [Contexto de ejecución]()
 - [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
 - [Closures](https://github.com/undefinedschool/notes-closures#closures)
   - [Closures y el contexto de ejecución](https://github.com/undefinedschool/notes-closures#closures-y-el-contexto-de-ejecuci%C3%B3n)
@@ -161,6 +162,12 @@ Tener _closures_ es una feature importante porque permite controlar qué queda d
 En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual significa que depende de cómo son declaradas en el código y no de cuándo o cómo se ejecutan. _Léxico_ hace referencia a dónde (en qué parte del código) fue definida la función.
 
 Determina a qué datos (variables, estado) una función tiene acceso cuando la invocamos.
+
+## Contexto de ejecución
+
+El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). Cada vez que creamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_.
+
+También existe el _contexto de ejecución global_, que se crea cuando el _engine_ de JS comienza a analizar nuestro código. Este contexto siempre está presente e incluye un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, `global` si estamos en Node) y el valor al que hace referencia `this`, que en el caso del browser apunta al objeto `window`.
 
 ## FP y Funciones
 
