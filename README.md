@@ -31,7 +31,7 @@
 - [Intro](https://github.com/undefinedschool/notes-closures#intro)
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
   - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
-- [Contexto de ejecución]()
+- [Contexto de ejecución](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n)
 - [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
 - [Closures](https://github.com/undefinedschool/notes-closures#closures)
   - [Closures y el contexto de ejecución](https://github.com/undefinedschool/notes-closures#closures-y-el-contexto-de-ejecuci%C3%B3n)
