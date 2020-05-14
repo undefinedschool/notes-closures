@@ -32,6 +32,8 @@
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
   - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
 - [Contexto de ejecución](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n)
+  - [Fase de _Creación_]()
+  - [Fase de _Ejecución_]()
 - [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
 - [Closures](https://github.com/undefinedschool/notes-closures#closures)
   - [Closures y el contexto de ejecución](https://github.com/undefinedschool/notes-closures#closures-y-el-contexto-de-ejecuci%C3%B3n)
@@ -165,9 +167,17 @@ Determina a qué datos (variables, estado) una función tiene acceso cuando la i
 
 ## Contexto de ejecución
 
-El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). Cada vez que creamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_.
+El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). Cada vez que creamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_, que es pusheado al [_Call Stack_](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack), para _trackear_ la evolución del mismo, pasando a ser el _contexto de ejecución activo_. Cuando una función retorna, el contexto se elimina (_pop_) del stack.
 
-También existe el _contexto de ejecución global_, que se crea cuando el _engine_ de JS comienza a analizar nuestro código. Este contexto siempre está presente e incluye un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, `global` si estamos en Node) y el valor al que hace referencia `this`, que en el caso del browser apunta al objeto `window`.
+También existe el _contexto de ejecución global_, que siempre está presente y se crea cuando el _engine_ de JS comienza a analizar nuestro código.
+
+Podemos diferenciar 2 fases del contexto, _creación_ y _ejecución_.
+
+### Fase de _Creación_
+
+Inicialmente, incluye un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, [`global`](https://nodejs.org/api/globals.html#globals_global) si estamos en Node) y el valor al que hace referencia `this`, que en el caso del browser apunta al objeto `window`.
+
+### Fase de _Ejecución_
 
 ## FP y Funciones
 
