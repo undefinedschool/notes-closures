@@ -159,7 +159,7 @@ El _scope_ de una variable depende de cómo la definamos:
 
 Tener _closures_ es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
 
-> Se recomienda usar la herramienta [JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer/) para entender mejor las fases de cada contexto
+> Se recomienda usar la herramienta [JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer/) para entender mejor las fases de cada contexto.
 
 ### Scope léxico
 
