@@ -32,8 +32,8 @@
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
   - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
 - [Contexto de ejecución](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n)
-  - [Fase de _Creación_]()
-  - [Fase de _Ejecución_]()
+  - [Fase de _Creación_](https://github.com/undefinedschool/notes-closures#fase-de-creaci%C3%B3n)
+  - [Fase de _Ejecución_](https://github.com/undefinedschool/notes-closures#fase-de-ejecuci%C3%B3n)
 - [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
 - [Closures](https://github.com/undefinedschool/notes-closures#closures)
   - [Closures y el contexto de ejecución](https://github.com/undefinedschool/notes-closures#closures-y-el-contexto-de-ejecuci%C3%B3n)
@@ -173,11 +173,26 @@ El _contexto_ es toda la información necesaria para ejecutar una función, como
 
 También existe el _contexto de ejecución global_, que siempre está presente y se crea cuando el _engine_ de JS comienza a analizar nuestro código.
 
-Podemos diferenciar 2 fases del contexto, _creación_ y _ejecución_.
+**Podemos diferenciar 2 fases del contexto, _creación_ y _ejecución_**.
 
 ### Fase de _Creación_
 
-Inicialmente, incluye un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, [`global`](https://nodejs.org/api/globals.html#globals_global) si estamos en Node) y el valor al que hace referencia `this`, que en el caso del browser apunta al objeto `window`.
+Inicialmente, en esta fase 
+
+- se crea un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, [`global`](https://nodejs.org/api/globals.html#globals_global) si estamos en Node).
+- se setea el valor al que hace referencia `this` (que, en el caso del browser, apunta al objeto `window`).
+- se reserva memoria para las variables y funciones de nuestro programa.
+
+Siguiendo con el último ítem, en esta fase, el engine de JS analiza todo el código, buscando instanciar todas las variables y funciones que creemos. Esto posibilita, por ejemplo, que funcione el _hoisting_
+
+```js
+console.log(a);
+var a = 'Hola mundo';
+```
+
+Cuando el engine de JS lee el código anterior, reserva memoria para esa variable `a` y le asigna el valor `undefined`.
+
+👉 **No se ejecuta ninguna función en este punto, sólo se _crean_ cosas.**
 
 ### Fase de _Ejecución_
 
