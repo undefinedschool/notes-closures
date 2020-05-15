@@ -155,7 +155,7 @@ El _scope_ de una variable depende de cómo la definamos:
 
 > **Siempre que sea posible, es recomendable evitar utilizar variables globales**: podemos tener colisiones de nombres (por ejemplo, si estamos utilizando módulos o importando alguna librería externa) y estamos generando [_side-effects_](https://github.com/undefinedschool/notes-fp-js#side-effects), que vuelven menos mantenible y más frágil a nuestro código.
 
-👉 **En JavaScript, cada función crea un nuevo _contexto local de ejecución_ (o _scope local_).**
+👉 **En JavaScript, al invocar una función se crea un nuevo _contexto local de ejecución_ (y el correspondiente _scope local_).**
 
 Tener _closures_ es una feature importante porque permite controlar qué queda dentro y fuera del _scope_ de una función y qué variables son compartidas entre funciones que se encuentren bajo el mismo _scope_ (pensemos en funciones definidas dentro de otras). Entender cómo las variables y funciones se relacionan entre sí es clave para entender lo que sucede en nuestro código, tanto en el paradigma funcional como en el de objetos.
 
@@ -196,7 +196,9 @@ Cuando el engine de JS lee el código anterior, reserva memoria para esa variabl
 
 ### Fase de _Ejecución_
 
-Es en ésta fase donde se asignan valores en JS y se ejecutan las funciones. Volviendo al ejemplo anterior, ahora a la variable `a` se le asigna `'Hola mundo'`
+Es en ésta fase donde se asignan valores en JS y se comienza a ejecutar el código, línea por línea. 
+
+Volviendo al ejemplo anterior, ahora a la variable `a` se le asigna `'Hola mundo'`
 
 ```js
 console.log(a);
@@ -235,7 +237,7 @@ Un closure almacena el _estado_ de una función (tiene un ambiente de variables 
 
 ### Closures y el contexto de ejecución
 
-Dijimos anteriormente que cada función creaba un nuevo _contexto de ejecución_. Esto implica que
+Dijimos anteriormente que la invocación de una función creaba un nuevo _contexto de ejecución_. Esto implica que
 
 - cada variable declarada dentro de este scope es _local_.
 - el scope externo a la función no tiene acceso a las variables locales.
