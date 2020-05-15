@@ -167,7 +167,7 @@ En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual signifi
 
 Determina a qué datos (variables, estado) una función tiene acceso cuando la invocamos.
 
-> Similar a lo que sucede con la [_Prototype Chain_](https://github.com/undefinedschool/notes-oop-js#prototype), si una variable no se encuentra definida en el scope local de una función, se busca en su _scope léxico_ más cercano y así sucesivamente, hasta llegar al scope global.
+> Similar a lo que sucede con la [_Prototype Chain_](https://github.com/undefinedschool/notes-oop-js#prototype), si una variable no se encuentra definida en el scope local de una función, se busca entre sus argumentos, luego en su _scope léxico_ más cercano y así sucesivamente, hasta llegar al scope global, donde esta variable puede estar definida o no, arrojando un `ReferenceError` en este caso.
 
 ## Contexto de ejecución
 
