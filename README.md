@@ -190,7 +190,7 @@ console.log(a);
 var a = 'Hola mundo';
 ```
 
-Cuando el engine de JS lee el código anterior, reserva memoria para esa variable `a` y le asigna el valor `undefined`.
+Cuando el engine de JS lee el código anterior, reserva memoria para esa variable `a` y le asigna el valor `undefined` (a todas las variables se les asigna este valor por default).
 
 👉 **No se ejecuta ninguna función en este punto, sólo se _crean_ cosas.**
 
