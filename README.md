@@ -165,6 +165,8 @@ En JavaScript, las funciones tienen su propio _ámbito léxico_, lo cual signifi
 
 Determina a qué datos (variables, estado) una función tiene acceso cuando la invocamos.
 
+> Similar a lo que sucede con la [_Prototype Chain_](https://github.com/undefinedschool/notes-oop-js#prototype), si una variable no se encuentra definida en el scope local de una función, se busca en su _scope léxico_ más cercano y así sucesivamente, hasta llegar al scope global.
+
 ## Contexto de ejecución
 
 El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). Cada vez que creamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_, que es pusheado al [_Call Stack_](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack), para _trackear_ la evolución del mismo, pasando a ser el _contexto de ejecución activo_. Cuando una función retorna, el contexto se elimina (_pop_) del stack.
