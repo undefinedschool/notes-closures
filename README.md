@@ -182,6 +182,7 @@ Inicialmente, en esta fase
 - se crea un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, [`global`](https://nodejs.org/api/globals.html#globals_global) si estamos en Node).
 - se setea el valor al que hace referencia `this` (que, en el caso del browser, apunta al objeto `window`).
 - se reserva memoria para las variables y funciones de nuestro programa.
+- se asigna el valor `undefined` por default a todas las variables y se cargan las _declaraciones de funciones_ (funciones definidas con `function`) en memoria.
 
 Siguiendo con el último ítem, en esta fase, el engine de JS analiza todo el código, buscando instanciar todas las variables y funciones que creemos. Esto posibilita, por ejemplo, que funcione el _hoisting_
 
