@@ -169,15 +169,15 @@ Determina a qué datos (variables, estado) una función tiene acceso cuando la i
 
 ## Contexto de ejecución
 
-El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). Cada vez que creamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_, que es pusheado al [_Call Stack_](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack), para _trackear_ la evolución del mismo, pasando a ser el _contexto de ejecución activo_. Cuando una función retorna, el contexto se elimina (_pop_) del stack.
+El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). **Cada vez que invocamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_**, que es pusheado al [_Call Stack_](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack), para _trackear_ la evolución del mismo, pasando a ser el _contexto de ejecución activo_. Cuando una función retorna, el contexto se elimina (_pop_) del stack.
 
-También existe el _contexto de ejecución global_, que siempre está presente y se crea cuando el _engine_ de JS comienza a analizar nuestro código.
+**También existe el _contexto de ejecución global_, que siempre está presente y se crea cuando el _engine_ de JS comienza a analizar nuestro código**.
 
 **Podemos diferenciar 2 fases del contexto, _creación_ y _ejecución_**.
 
 ### Fase de _Creación_
 
-Inicialmente, en esta fase 
+En el _contexto de ejecución global_, en esta fase 
 
 - se crea un [_objeto global_](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (`window` en el caso del browser, [`global`](https://nodejs.org/api/globals.html#globals_global) si estamos en Node).
 - se setea el valor al que hace referencia `this` (que, en el caso del browser, apunta al objeto `window`).
@@ -192,6 +192,8 @@ var a = 'Hola mundo';
 ```
 
 Cuando el engine de JS lee el código anterior, reserva memoria para esa variable `a` y le asigna el valor `undefined` (a todas las variables se les asigna este valor por default).
+
+En el _contexto de ejecución global_, en cambio, sucede prácticamente lo mismo sólo que en lugar de crearse un _objeto global_, se crea el objeto [_arguments_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), que contiene los valores de los argumentos pasados a la función.
 
 👉 **No se ejecuta ninguna función en este punto, sólo se _crean_ cosas.**
 
