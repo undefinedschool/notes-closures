@@ -257,6 +257,8 @@ Al crear un closure, [se enlaza una función a un entorno de variables](https://
 
 Una función definida dentro de otra y luego retornada, mantiene el acceso a este entorno a través de una propiedad oculta `[[scope]]` (recordemos que [las funciones son objetos!](https://github.com/undefinedschool/notes-functions-first-class)) que persiste aún cuando la función es retornada. De esta forma, la función retornada (closure) va a buscar las referencias a variables y otros objetos primero en su scope local y luego en el entorno ligado, antes de pasar a buscar en el scope global.
 
+> Decimos que la función interna (closure) crea una _clausura_ sobre el [contexto de ejecución](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n) de la función externa
+
 ### Creando un closure
 
 Para definir un closure, alcanza con definir una función dentro de otra: tenemos una función que retorna una función, por lo tanto se trata de una [_Higher-Order Function_](https://github.com/undefinedschool/notes-fp-js#higher-order-functions).
