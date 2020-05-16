@@ -142,7 +142,9 @@ Ya no es posible modificar el `id` desde afuera del scope de la función, porque
 
 ## Scope (breve repaso)
 
-Define el _alcance_ de una variable, es decir, dónde puede o no utilizarse. En JavaScript tenemos 3 tipos de scope: global, por función y por bloque.
+Es el [_contexto actual de ejecución_](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n), en el que los valores, variables y expresiones son _visibles_ o pueden ser referenciadas, o lo que es lo mismo, el _alcance_, es decir, dónde pueden o no utilizarse.
+
+En JavaScript tenemos 3 tipos de scope: global, por función y por bloque, definidos según una jerarquía en la que los _scopes hijos_ (_child scopes_) tienen acceso a los _scopes padres_ (_parent scopes_), pero no al revés.
 
 - **global**: variables que se crean fuera de las funciones y que son accesibles desde cualquier punto.
 - **por función**: variables locales a una función, que sólo pueden accederse dentro de la misma.
