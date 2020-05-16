@@ -38,11 +38,12 @@
 - [Closures](https://github.com/undefinedschool/notes-closures#closures)
   - [Closures y el contexto de ejecución](https://github.com/undefinedschool/notes-closures#closures-y-el-contexto-de-ejecuci%C3%B3n)
   - [Creando un closure](https://github.com/undefinedschool/notes-closures#creando-un-closure)
-  - [Usos comunes](https://github.com/undefinedschool/notes-closures#usos-comunes)
+  - [Algunas aplicaciones]()
     - [Definir variables y propiedades _privadas_](https://github.com/undefinedschool/notes-closures#definir-variables-y-propiedades-privadas)
     - [Evitar las variables globales](https://github.com/undefinedschool/notes-closures#evitar-las-variables-globales)
     - [Uso más eficiente de la memoria](https://github.com/undefinedschool/notes-closures/blob/master/README.md#uso-m%C3%A1s-eficiente-de-la-memoria)
     - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
+    - [FP: Function Decorators]()
     - [FP: Aplicaciones Parciales y _Currying_](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales-y-currying)
 
 ---
@@ -307,7 +308,7 @@ function outerFunction(outerVariable) {
 }
 ```
 
-### Usos comunes
+### Algunas aplicaciones
 
 #### Definir variables y propiedades _privadas_
 
@@ -411,6 +412,10 @@ getProduceChocolateEfficiently(345);
 [WIP]
 
 Los objetos no son la única forma que tenemos de _encapsular datos_. También podemos utilizar closures para crear _funciones con estado_ (stateful), cuyos valores de retorno dependan de este estado interno.
+
+#### FP: Function Decorators
+
+👉 Ver [Programación Funcional en JS - Function Decorators](https://github.com/undefinedschool/notes-fp-js/blob/master/README.md#function-decorators)
 
 #### FP: Aplicaciones Parciales y _Currying_
 
