@@ -43,7 +43,7 @@
     - [Evitar las variables globales](https://github.com/undefinedschool/notes-closures#evitar-las-variables-globales)
     - [Uso más eficiente de la memoria](https://github.com/undefinedschool/notes-closures#uso-m%C3%A1s-eficiente-de-la-memoria)
     - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
-    - [FP: Function Decorators]()
+    - [FP: Function Decorators](https://github.com/undefinedschool/notes-closures#fp-function-decorators)
     - [FP: Aplicaciones Parciales y _Currying_](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales-y-currying)
 
 ---
@@ -417,6 +417,6 @@ Los objetos no son la única forma que tenemos de _encapsular datos_. También p
 
 👉 Ver [Programación Funcional en JS - Function Decorators](https://github.com/undefinedschool/notes-fp-js#function-decorators)
 
-#### FP: Aplicaciones Parciales y _Currying_
+#### FP: Aplicaciones parciales y _Currying_
 
-[WIP]
+👉 Ver [Programación Funcional en JS - Aplicaciones parciales y _Currying_](https://github.com/undefinedschool/notes-fp-js#aplicaciones-parciales-y-currying)
