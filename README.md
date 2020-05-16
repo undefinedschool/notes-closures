@@ -31,7 +31,7 @@
 - [Intro](https://github.com/undefinedschool/notes-closures#intro)
 - [Scope (breve repaso)](https://github.com/undefinedschool/notes-closures#scope-breve-repaso)
   - [Scope léxico](https://github.com/undefinedschool/notes-closures#scope-l%C3%A9xico)
-- [Contexto de ejecución](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n)
+- [Contexto de ejecución](https://github.com/undefinedschool/notes-closures#contexto-de-ejecuci%C3%B3n)
   - [Fase de _Creación_](https://github.com/undefinedschool/notes-closures#fase-de-creaci%C3%B3n)
   - [Fase de _Ejecución_](https://github.com/undefinedschool/notes-closures#fase-de-ejecuci%C3%B3n)
 - [FP y Funciones](https://github.com/undefinedschool/notes-closures#fp-y-funciones)
@@ -41,7 +41,7 @@
   - [Algunas aplicaciones]()
     - [Definir variables y propiedades _privadas_](https://github.com/undefinedschool/notes-closures#definir-variables-y-propiedades-privadas)
     - [Evitar las variables globales](https://github.com/undefinedschool/notes-closures#evitar-las-variables-globales)
-    - [Uso más eficiente de la memoria](https://github.com/undefinedschool/notes-closures/blob/master/README.md#uso-m%C3%A1s-eficiente-de-la-memoria)
+    - [Uso más eficiente de la memoria](https://github.com/undefinedschool/notes-closures#uso-m%C3%A1s-eficiente-de-la-memoria)
     - [Funciones con estado (feat. _React Hooks_)](https://github.com/undefinedschool/notes-closures#funciones-con-estado-feat-react-hooks)
     - [FP: Function Decorators]()
     - [FP: Aplicaciones Parciales y _Currying_](https://github.com/undefinedschool/notes-closures#fp-aplicaciones-parciales-y-currying)
@@ -143,7 +143,7 @@ Ya no es posible modificar el `id` desde afuera del scope de la función, porque
 
 ## Scope (breve repaso)
 
-Es el [_contexto actual de ejecución_](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n), en el que los valores, variables y expresiones son _visibles_ o pueden ser referenciadas, o lo que es lo mismo, el _alcance_, es decir, dónde pueden o no utilizarse.
+Es el [_contexto actual de ejecución_](https://github.com/undefinedschool/notes-closures#contexto-de-ejecuci%C3%B3n), en el que los valores, variables y expresiones son _visibles_ o pueden ser referenciadas, o lo que es lo mismo, el _alcance_, es decir, dónde pueden o no utilizarse.
 
 En JavaScript tenemos 3 tipos de scope: global, por función y por bloque, definidos según una jerarquía en la que los _scopes hijos_ (_child scopes_) tienen acceso a los _scopes padres_ (_parent scopes_), pero no al revés.
 
@@ -258,7 +258,7 @@ Al crear un closure, [se enlaza una función a un entorno de variables](https://
 
 Una función definida dentro de otra y luego retornada, mantiene el acceso a este entorno a través de una propiedad oculta `[[scope]]` (recordemos que [las funciones son objetos!](https://github.com/undefinedschool/notes-functions-first-class)) que persiste aún cuando la función es retornada. De esta forma, la función retornada (closure) va a buscar las referencias a variables y otros objetos primero en su scope local y luego en el entorno ligado, antes de pasar a buscar en el scope global.
 
-> Decimos que la función interna (closure) crea una _clausura_ sobre el [contexto de ejecución](https://github.com/undefinedschool/notes-closures/blob/master/README.md#contexto-de-ejecuci%C3%B3n) de la función externa
+> Decimos que la función interna (closure) crea una _clausura_ sobre el [contexto de ejecución](https://github.com/undefinedschool/notes-closures#contexto-de-ejecuci%C3%B3n) de la función externa
 
 ### Creando un closure
 
@@ -415,7 +415,7 @@ Los objetos no son la única forma que tenemos de _encapsular datos_. También p
 
 #### FP: Function Decorators
 
-👉 Ver [Programación Funcional en JS - Function Decorators](https://github.com/undefinedschool/notes-fp-js/blob/master/README.md#function-decorators)
+👉 Ver [Programación Funcional en JS - Function Decorators](https://github.com/undefinedschool/notes-fp-js#function-decorators)
 
 #### FP: Aplicaciones Parciales y _Currying_
 
