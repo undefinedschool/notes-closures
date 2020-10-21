@@ -150,11 +150,11 @@ Determina a qué datos (variables, estado) una función tiene acceso cuando la i
 
 ## Contexto de ejecución
 
-El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disnponibles para ser utilizadas (scope). **Cada vez que invocamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_**, que es pusheado al [_Call Stack_](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack), para _trackear_ la evolución del mismo, pasando a ser el _contexto de ejecución activo_. Cuando una función retorna, el contexto se elimina (_pop_) del stack.
+El _contexto_ es toda la información necesaria para ejecutar una función, como por ejemplo las variables disponibles para ser utilizadas (scope). **Cada vez que invocamos una función en JavaScript, se crea un nuevo _contexto de ejecución local_**, que es pusheado al [_Call Stack_](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack), para _trackear_ la evolución del mismo, pasando a ser el _contexto de ejecución activo_. Cuando una función retorna, el contexto se elimina (_pop_) del stack.
 
 **También existe el _contexto de ejecución global_, que siempre está presente y se crea cuando el _engine_ de JS comienza a analizar nuestro código**.
 
-**Podemos diferenciar 2 fases del contexto, _creación_ y _ejecución_**.
+Podemos diferenciar **2 fases** del contexto, **_creación_ y _ejecución_**.
 
 ### Fase de _Creación_
 
